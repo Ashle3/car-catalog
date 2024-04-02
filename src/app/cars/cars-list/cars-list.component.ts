@@ -8,12 +8,12 @@ import { CarsService } from '../cars.service';
   templateUrl: './cars-list.component.html',
   styleUrl: './cars-list.component.css'
 })
-export class CarsListComponent implements OnInit{
+export class CarsListComponent{
   cars: any;
 
   constructor(private carsService: CarsService){}
 
-  ngOnInit(): void {
-      this.cars = this.carsService.getCars();
-  }
+  // ngOnInit(): void {
+  //     this.cars = this.carsService.getCars();
+  // }
 }

@@ -1,4 +1,17 @@
 
-<div *ngFor = "let car of cars">
-    <h2>{{car.make}} {{car.model}}</h2>
+<div class="row">
+    <div class="col-md-12 mx-auto">
+        <div class="">
+            <label for="make">Filter by Make: </label>
+            <select id="make" class="form-control">
+                <option value="null">Select</option>
+                <option value="" *ngFor = "let make of makes">{{make}}</option>
+            </select>
+        </div>
+        <div class="list-group" style="padding-top: 25px">
+            <div *ngFor = "let car of cars">
+                <li class="list-group-item text-left">{{car.make}} {{car.model}}</li>
+            </div>
+        </div>
+    </div>
 </div>
