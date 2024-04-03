@@ -21,15 +21,19 @@ export class CarsComponent implements OnInit{
       this.cars = data['cars'];
       this.makes = data['allMakes'];
     })
-    this.carsService.getCarById()
-    .subscribe((cdata: {}) => {
-      this.cardata = cdata;
-      console.log(this.cardata);
-    })
+    // this.carsService.getCarById()
+    // .subscribe((cdata: {}) => {
+    //   this.cardata = cdata;
+    //   console.log(this.cardata);
+    // })
   }
 
-  onSelect(value: string){
-    console.log(value)
+  onSelect(){
+    let selectMake = (<HTMLSelectElement>document.getElementById("make"));
+    // selectMake.addEventListener("change", (event) => {
+    //   console.log(selectMake.value);
+    // });
+    console.log(selectMake.value);
   }
 
   // onSelectedMake() {
