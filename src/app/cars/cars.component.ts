@@ -11,6 +11,8 @@ import { CarsService } from './cars.service';
 export class CarsComponent implements OnInit{
   cars = [];
   makes = [];
+  filteredMakes = [];
+  cardata = {};
 
   constructor(private carsService: CarsService){}
   ngOnInit(): void {
@@ -19,15 +21,28 @@ export class CarsComponent implements OnInit{
       this.cars = data['cars'];
       this.makes = data['allMakes'];
     })
-    // console.log(this.carsService.getHeader);
+    this.carsService.getCarById()
+    .subscribe((cdata: {}) => {
+      this.cardata = cdata;
+      console.log(this.cardata);
+    })
   }
 
-  // ngOnInit(): void {
-  //     this.carsService.getHeader()
-  //       .subscribe((response: any) => {
-  //         const header: string = Request.headers("Your-Token");
-  //         // this.cars = data['cars'];
-  //         console.log(header)
-  //       })
+  onSelect(value: string){
+    console.log(value)
+  }
+
+  // onSelectedMake() {
+  //   let selected = document.getElementsByClassName("option");
+  //   selected.addEventListener('click', () => {
+  //     if (selected) {
+  //       console.log(selected)
+  //     }
+  //   })
   // }
+
+  sortedMakes(make: string) {
+    //if cars.make === make selected {add make as parameter to filterCars function}
+  }
+  
 }

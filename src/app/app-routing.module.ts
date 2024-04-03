@@ -3,8 +3,8 @@ import { NgModule } from "@angular/core";
 import { CarsComponent } from "./cars/cars.component";
 
 const appRoutes: Routes  = [
-    // { path: '', redirectTo: '/cars', pathMatch: 'full' },
-    // { path: 'cars', component: CarsComponent }
+    { path: '', redirectTo: '/cars', pathMatch: 'full' },
+    { path: 'cars', component: CarsComponent }
 ];
 
 @NgModule({

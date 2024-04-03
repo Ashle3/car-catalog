@@ -3,15 +3,18 @@
     <div class="col-md-12 mx-auto">
         <div class="">
             <label for="make">Filter by Make: </label>
-            <select id="make" class="form-control">
-                <option value="null">Select</option>
-                <option value="" *ngFor = "let make of makes">{{make}}</option>
+            <select id="make" class="form-control" value="">
+                <option value="null" class="option">Select</option>
+                <option value="" class="option" *ngFor = "let make of makes">{{make}}</option>
             </select>
         </div>
         <div class="list-group" style="padding-top: 25px">
             <div *ngFor = "let car of cars">
                 <li class="list-group-item text-left">{{car.make}} {{car.model}}</li>
             </div>
+        </div>
+        <div>
+            
         </div>
     </div>
 </div>

@@ -15,6 +15,10 @@ export class CarsService {
     return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {headers: { Accept: 'application/json'}});
   } 
 
+  filterCars(make: string): Observable<any> {
+    return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars?make=" + {make}, {headers: { Accept: 'application/json'}});
+  }
+
   getCarById(): Observable<any>{
     return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars/wj6qg7zpt09udm1m", 
       {headers: { Accept: 'application/json', Authorization: 'MWLRucmkZ9kUXGo6E37o3GPnJe4=' }})
