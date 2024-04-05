@@ -15,11 +15,16 @@ export class CarsService {
     return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {headers: { Accept: 'application/json'}});
   } 
 
-  filterCars(make: string): Observable<any> {
-    return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars?make=" + {make}, {headers: { Accept: 'application/json'}});
+  filterCars(carMake: string): Observable<any> {
+    const url = "https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars";
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("make", carMake);
+    return this.http.get(url, {params: queryParams});
   }
 
-  getCarById(): Observable<any>{
+
+  getCarById(id: string): Observable<any>{
+    const url = "https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars/" + id;
     return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars/wj6qg7zpt09udm1m", 
       {headers: { Accept: 'application/json', Authorization: 'MWLRucmkZ9kUXGo6E37o3GPnJe4=' }})
   } 
