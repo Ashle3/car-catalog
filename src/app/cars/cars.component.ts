@@ -73,21 +73,21 @@ export class CarsComponent implements OnInit{
     }
   }
 
-  getToken() {
-    // const headerNames = new HttpHeaders().set('Access-Control-Expose-Headers', 'your-token');
-    // console.log(headerNames);
-    this.http.get<any>("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", { observe: 'response' })
-    .subscribe((resp: HttpResponse<any>)=> {
-      // console.log(resp.headers.get("your-token"));
-      console.log(resp.headers.get('your-token'));
+  // getToken() {
+  //   // const headerNames = new HttpHeaders().set('Access-Control-Expose-Headers', 'your-token');
+  //   // console.log(headerNames);
+  //   this.http.get<any>("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", { observe: 'response' })
+  //   .subscribe((resp: HttpResponse<any>)=> {
+  //     // console.log(resp.headers.get("your-token"));
+  //     console.log(resp.headers.get('your-token'));
       
-    })
+  //   })
 
 //     this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {observe: 'response'})
 //     .subscribe((response) => {
 //       response.headers.keys().map( (key) => console.log(`${key}: ${response.headers.get(key)}`))});
 
  };
-  }
+  
   
 

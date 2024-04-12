@@ -23,12 +23,12 @@ export class CarsService {
   }
 
 
-  getCarById(id: string): any{
-    const token = '5MSUKOtnQrU5M7ULSpSKouLMThg=';
-    const url = "https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars/" + id + "/";
-    return this.http.get<Observable<any>>(url, 
-      { observe: 'response', 
-      headers: { Authorization: token}
-    });
-  }
+  // getCarById(id: string): any{
+  //   const token = '5MSUKOtnQrU5M7ULSpSKouLMThg=';
+  //   const url = "https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars/" + id + "/";
+  //   return this.http.get<Observable<any>>(url, 
+  //     { observe: 'response', 
+  //     headers: { Authorization: token}
+  //   });
+  // }
 }
