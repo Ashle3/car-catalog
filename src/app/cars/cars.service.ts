@@ -11,9 +11,13 @@ export class CarsService {
 
   constructor(private http: HttpClient) { }
 
+  // getCars(): Observable<any> {
+  //   return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {headers: { Accept: 'application/json'}});
+  // } 
+
   getCars(): Observable<any> {
-    return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {headers: { Accept: 'application/json'}});
-  } 
+      return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {headers: { Accept: 'application/json'}});
+    } 
 
   filterCars(carMake: string): Observable<any> {
     const url = "https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars";

@@ -1,0 +1,17 @@
+.row{
+    background-color: black;
+    color: white;
+    background-image: linear-gradient(to right, black, gray);
+}
+
+h1{
+    float: left;
+}
+
+.coda-regular {
+    font-family: "Coda", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  
