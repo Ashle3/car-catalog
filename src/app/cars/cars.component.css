@@ -2,8 +2,14 @@
 .filter{
     float: right;
     display: flex;
-    padding-top: 20px;
+    padding-top: 10px;
     width: 350px;
+    margin-left: 510px;
+}
+
+.container{
+    display:grid;
+    padding-bottom: 20px;
 }
 
 .words{
@@ -14,33 +20,17 @@
 
 .car-items{
     margin-left: 250px;
-    margin-top: 80px;
     width: 600px;
-    margin-bottom: 10px;
     position: relative;
 }
 
 .item-header{
     display: flex;
     border: 1px solid gray;
-    background-color: gray;
-    background-image: linear-gradient(to right, gray, lightgray);
+    background-color: lightgray;
+    /* background-image: linear-gradient(to right, gray, lightgray); */
+    margin-top: 10px;
 
-}
-
-.button{
-    border: none;
-    background-color: transparent;
-    color: black;
-    font-size: 35px;
-    padding-top: 9px;
-    margin-right: 10px;
-    position: absolute;
-    right: 10px;
-}
-
-.button:hover{
-    text-shadow: 2px 2px gray;
 }
 
 .coda-regular {
@@ -52,20 +42,18 @@
 h3{
     padding-left: 10px;
     color: black;
+    font-size: 20px;
 }
 
 /* Accordion body */
 
 .item-content{
-    border: 1px solid gray;
-    margin-bottom: 20px;
     display: inline-flex;
-    width: 600px;
     padding: 10px;
 }
 
 img{
-    width: 300px;
+    width: 200px;
 }
 
 ul{
@@ -74,5 +62,6 @@ ul{
 
 li{
     list-style-type: none;
-    font-size: 20px;
+    font-size: 18px;
+    padding: 5px;
 }

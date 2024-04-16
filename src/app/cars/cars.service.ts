@@ -16,16 +16,31 @@ export class CarsService {
   // } 
 
   getCars(): Observable<any> {
-      return this.http.get("https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars", {headers: { Accept: 'application/json'}});
+      return this.http.get("https://exam.razoyo.com/api/cars", {headers: { Accept: 'application/json'}});
     } 
 
   filterCars(carMake: string): Observable<any> {
-    const url = "https://dev-test-frontend-werpwe2p3q-uc.a.run.app/cars";
+    const url = "https://exam.razoyo.com/api/cars";
     let queryParams = new HttpParams();
     queryParams = queryParams.append("make", carMake);
     return this.http.get(url, {params: queryParams});
   }
 
+  getToken(){
+    this.http.get('https://exam.razoyo.com/api/cars', {observe: 'response'})
+    .subscribe(resp => {
+      return resp.headers.get('Your-Token');
+    })
+  }
+
+  getCarById(id: string, token: any){
+    const url = 'https://exam.razoyo.com/api/cars/' + id;
+    const header = new HttpHeaders({
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get(url, {headers: header});
+  }
 
   // getCarById(id: string): any{
   //   const token = '5MSUKOtnQrU5M7ULSpSKouLMThg=';

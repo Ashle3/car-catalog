@@ -2,7 +2,7 @@
     <img class="banner" src="https://tse1.mm.bing.net/th?id=OIP.qNW0PvLEyJsVtKwy8U2zogHaDt&pid=Api&P=0&h=220" alt="Row of Cars">
 </div> -->
 <div class="" style="display: flex; margin-top: 40px;">
-    <div class="">
+    <div class="container">
         <div class="col-sm-3 row filter">
             <label for="make" class="words">Filter by Make: </label>
             <select id="make" class="form-control" value="Select" (change)="onSelect()">
@@ -10,58 +10,20 @@
                 <option *ngFor = "let make of makes" value="{{make}}" class="option">{{make}}</option>
             </select>
         </div>
-        <div class="car-items">
-            <div class="item-header">
-                <h3 class="coda-regular">Red Car</h3>
-                <button class="button">+</button>
-            </div>
-            <div class="item-content">
-                <img src="https://tse3.mm.bing.net/th?id=OIP.ZsPLFCxDQewrzKRkU-XuJwHaFj&pid=Api&P=0&h=220" alt="Image of car">
+        <mat-accordion class="car-items" *ngFor="let car of cars">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header class="item-header">
+                    <h3 class="coda-regular">{{car.year}} {{car.make}} {{car.model}}</h3>
+                </mat-expansion-panel-header>
+                <div class="item-content">
+                    <img src="{{car.image}}" alt="Image of {{car.year}} {{car.make}} {{car.model}}">
                     <ul>
-                        <li>Price: $40,000</li>
-                        <li>MPG: 25</li>
-                        <li>Seats: 5</li>
-                    </ul>
-            </div>
-            <div class="item-header">
-                <h3 class="coda-regular">Blue Car</h3>
-                <button class="button">+</button>
-            </div>
-            <div class="item-content">
-                <img src="https://tse4.explicit.bing.net/th?id=OIP.YB566xacHsVwr3BuIOxdZQHaDs&pid=Api&P=0&h=220" alt="Image of car">
-                    <ul>
-                        <li>Price: $45,000</li>
-                        <li>MPG: 22</li>
-                        <li>Seats: 5</li>
-                    </ul>
-            </div>
-            <!-- <div class="accordion-item" *ngFor = "let car of cars">
-                <div class="">
-                    <h3 class="accordion-header">
-                        {{car.year}} {{car.make}} {{car.model}}
-                    </h3>
-                    plus sign goes here
-                </div>
-                <div class="accordion-body">
-                    <img src="" alt="Image of {{car.year}} {{car.make}} {{car.model}}">
-                    <ul>
-                        <li>Price: </li>
-                        <li>MPG: </li>
-                        <li>Seats: </li>
+                        <li class="coda-regular">Price: {{car.price}}</li>
+                        <li class="coda-regular">MPG: {{car.mpg}}</li>
+                        <li class="coda-regular">Seats: {{car.seats}}</li>
                     </ul>
                 </div>
-            </div> -->
-        </div>
-        <!-- <div class="list-group" style="padding-top: 25px">
-            <div *ngFor = "let car of cars">
-                <li class="list-group-item text-left">{{car.make}} {{car.model}}</li>
-            </div>
-        </div> -->
-        <div>
-            
-        </div>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
 </div>
-<!-- <script>
-    import { Collapse, initMDB } from 'mdb-ui-kit';
-</script> -->
