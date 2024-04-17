@@ -18,7 +18,6 @@ export class CarsComponent implements OnInit{
   makes = [];
   token: any;
   carId: string;
-  carData: any;
 
   constructor(private carsService: CarsService,
               private http: HttpClient){}
@@ -32,11 +31,13 @@ export class CarsComponent implements OnInit{
     .subscribe(resp => {
       let yourtoken = resp.headers.get('Your-Token');
       console.log(yourtoken);
+      //CORS error occurs below
       // this.carsService.getCarById(this.carId, yourtoken).subscribe();
     })
     this.convertCurrency();
   }
   
+  //observes change in dropdown filter
   onSelect(){
     let selectMake = (<HTMLSelectElement>document.getElementById("make"));
     if (selectMake.value === "Any") {
@@ -61,15 +62,6 @@ export class CarsComponent implements OnInit{
     });
     return USDollar.format(priceNum);
   }
-
-  // getToken(){
-  //   this.http.get('https://exam.razoyo.com/api/cars', {observe: 'response'})
-  //   .subscribe(resp => {
-  //     // return resp.headers.get('Your-Token');
-  //     let yourtoken = resp.headers.get('Your-Token');
-  //     return yourtoken;
-  //   })
-  // }
 
  };
 

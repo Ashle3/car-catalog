@@ -1,5 +1,8 @@
 # CarCatalog
 
+Contains a list of cars read from the https://https://exam.razoyo.com/api/cars api. Users can filter the cars by make with the drop down filter at the top of the page. Users can also click on a vehicle name to learn more about that specific vehicle, such as price, numbers of seats, and MPG.
+
+# Build Information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
 
 ## Development server
