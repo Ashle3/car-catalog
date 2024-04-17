@@ -28,12 +28,13 @@ export class CarsComponent implements OnInit{
         this.cars = data['cars'];
         this.makes = data['makes'];
       });
-    // this.http.get('https://exam.razoyo.com/api/cars', {observe: 'response'})
-    // .subscribe(resp => {
-    //   let yourtoken = resp.headers.get('Your-Token');
-    //   // console.log(yourtoken);
-    //   this.carsService.getCarById(this.carId, yourtoken).subscribe();
-    // })
+    this.http.get('https://exam.razoyo.com/api/cars', {observe: 'response'})
+    .subscribe(resp => {
+      let yourtoken = resp.headers.get('Your-Token');
+      console.log(yourtoken);
+      // this.carsService.getCarById(this.carId, yourtoken).subscribe();
+    })
+    this.convertCurrency();
   }
   
   onSelect(){
@@ -49,6 +50,16 @@ export class CarsComponent implements OnInit{
         this.cars = data['cars'];
       });
     }
+  }
+
+  convertCurrency(){
+    let price = document.getElementById('price').innerHTML;
+    let priceNum = Number(price);
+    let USDollar = new Intl.NumberFormat('en-us',{
+      style: 'currency',
+      currency: 'USD'
+    });
+    return USDollar.format(priceNum);
   }
 
   // getToken(){

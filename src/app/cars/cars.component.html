@@ -18,12 +18,23 @@
                 <div class="item-content">
                     <img src="{{car.image}}" alt="Image of {{car.year}} {{car.make}} {{car.model}}">
                     <ul>
-                        <li class="coda-regular">Price: {{car.price}}</li>
+                        <li class="coda-regular">Price: $<span id="price">{{car.price}}</span></li>
                         <li class="coda-regular">MPG: {{car.mpg}}</li>
                         <li class="coda-regular">Seats: {{car.seats}}</li>
                     </ul>
                 </div>
             </mat-expansion-panel>
+            <!-- <script>
+                function convertCurrency(price){
+                let priceNum = Number(price);
+                let USDollar = new Intl.NumberFormat('en-us',{
+                  style: 'currency',
+                  currency: 'USD'
+                });
+                return USDollar.format(priceNum);
+              }
+              document.getElementById('price').innerHTML = convertCurrency(`{car.price}`);
+            </script> -->
         </mat-accordion>
     </div>
 </div>
